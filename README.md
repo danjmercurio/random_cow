@@ -31,7 +31,26 @@ If you want to be able to run the script as a command from anywhere, copy it to 
 sudo cp ./random_cow.py /usr/bin/random_cow
 ```
 
-**Be extremely careful when copying into the root filesystem as a superuser! (That means with sudo.)q _Never use the -r, -f, or -rf flags of the cp command_ unless you are absolutely sure you know what you are doing.**
+**Be extremely careful when copying into the root filesystem as a superuser! (That means with sudo.) _Never use the -r, -f, or -rf flags of the cp command_ unless you are absolutely sure you know what you are doing.**
+
+_I want a cool ASCII message with a random cow whenever I start my terminal. What do I do?_
+
+Assuming you are using bash:
+```
+sudo apt update && sudo apt install -y fortune && cd ~ && touch .bash_login && echo "fortune | random_cow" > ./bash_login && echo -e "\n" && cat /etc/issue
+```
+There are a wide variety of fortune addon packages to choose from, including fortunes in German, Russian, Polish, Spanish, Czech, Slovak, Bulgarian, and even Esperanto. 
+
+_Keep in mind some may be offensive. Packages containing text some may consider offensive are clearly labeled and easily avoided._ 
+
+Browse these packages with the following command:
+```
+sudo apt update && apt-cache search --names-only fortunes
+```
+
+_ASCII art is lame. It's 2018, I own dual 4K monitors, I want something graphical!_
+
+* Check out the **xcowsay** package, although you'll probably still think this whole thing is lame.
 
 ## Where are the tests?
 
